@@ -1,0 +1,24 @@
+
+[negative]
+
+Reply hazy try again
+Better not tell you now
+Response = "Ask again later"
+Not Possible
+Don’t count on it
+Outlook not so good
+My sources say no
+Very doubtful
+My reply is no
+
+[neutral]
+
+Maybe
+Maybe so
+That could be Possible
+It might be Possible
+Varied 
+Ok
+It might be alright 
+Cannot predict now
+Concentrate and ask again
