@@ -12,11 +12,11 @@ $ source venv/bin/activate
 
 OR
 
-$ python -m pip venv .venv
-
-$ python -m pip install Django
+$ python -m venv .venv
 
 $ source .venv/bin/activate
+
+$ python -m pip install Django
 
 $ cd eightBall
 
@@ -25,15 +25,14 @@ $ python manage.py runserver
 
 (For Windows)
 ```
-PS> python -m pip venv venvW
-
-PS> python -m pip install Django
+PS> python -m venv venvW
 
 PS> .\venvW\Scripts\activate
+
+PS> python -m pip install Django
 
 PS> cd eightBall
 
 PS> python manage.py runserver  
-
 
 ```
