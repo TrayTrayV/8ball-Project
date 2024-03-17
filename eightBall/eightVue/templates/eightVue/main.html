@@ -10,14 +10,24 @@
     <title>EightBall</title>
 </head>
 <body>
-
+    
 <!-- Application Interface -->
+<div class="navbar" style="position:fixed; width: 99%;height: 10%; z-index: 9999;">
     <div class="window">
         <div class="title-bar">
+            <a href="#top" style="color: white; font-size: 15px; text-decoration:none;">
             <div class="title-bar-text">8-BALL version v1.0.00.00000.=)</div> 
+            </a>
+           <b> <a style="color: white; font-size: 25px; text-decoration:none;" href="https://github.com/TrayTrayV/8ball-Project">Github Repository</a> </b>
+           <b> <a style="color: white; font-size: 25px; text-decoration:none;" href="#faq">FAQ</a> </b>
         </div>
     </div>
+    </div>
    
+
+<br>
+<br>
+<div class="main">
     <div id="links">
             
         <img id="banner" alt="pony" src='https://64.media.tumblr.com/31700e5d69937e0e4d2eb8e61a2f6048/d56038eab59cd3d6-bc/s250x400/26e4395cfb84e64e8438cb2b310ed0cffcab7e19.gifv' width="106" height="96" />
@@ -59,6 +69,9 @@
           <h1> > [[ message ]] </h1>
         </div>
       </div>
+
+      <div id="faq"></div>
+
 <br>
 <br>
       <!-- Window For FAQ -->
@@ -71,7 +84,6 @@
             <button aria-label="Maximize"></button>
           </div>
         </div>
-      <!-- paraphrase-->
         <div class="window-body">
             <h2 style="text-align:left;"> FAQ </h2>
             <b><p style="text-align:left; font-size: 30px;">What is magic 8-Ball?</p></b>
@@ -88,7 +100,6 @@
 <br>
 <br>
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
 <!-- Scripts -->
 <script>
@@ -129,6 +140,7 @@
 
     var buttonsound = new Audio("https://dl.dropbox.com/scl/fi/tla1a0p2hxex4cg3wr0qt/placeholder-sound.ogg?rlkey=cx5x62ljl7hvx53igzrx6fc8g&")
     buttonsound.controls = false;
+    buttonsound.volume = 0.2;
 
     function playbuttonsound(){
         if (buttonsound.currentTime > 0 ) {
