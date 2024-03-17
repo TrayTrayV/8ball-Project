@@ -40,7 +40,9 @@
     <div id="buttonSomething">
         <form id ="buttonStyle" @submit.prevent="askQuestion">
             <input type="text" id="textBox" placeholder="Ask the 8-Ball!" v-model="question"> 
-            <button type="submit" id="buttonBox">Ask</button>
+            <center><button type="submit" id="buttonBox" onclick="playbuttonsound()">
+                Ask
+            </button></center>
         </form>
     </div>
 
@@ -97,6 +99,16 @@
     });
 
     app.mount('#mainApp');
+
+    var buttonsound = new Audio("https://dl.dropbox.com/scl/fi/tla1a0p2hxex4cg3wr0qt/placeholder-sound.ogg?rlkey=cx5x62ljl7hvx53igzrx6fc8g&")
+    
+    function playbuttonsound(){
+        if (buttonsound.currentTime > 0 ) {
+            buttonsound.currentTime = 0;
+        }else{
+            buttonsound.play();
+        }
+    }
 </script>
 
 <!-- Style -->
