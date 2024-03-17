@@ -12,12 +12,26 @@
 <body>
 
 <!-- Application Interface -->
+<div class="navbar" style="position:fixed; width: 99%;height: 10%; z-index: 9999;">
     <div class="window">
         <div class="title-bar">
-            <div class="title-bar-text">8-BALL version v1.0.00.00000.=)</div> 
+            <a href="#top" style="color: white; font-size: 15px; text-decoration:none;">
+                <div class="title-bar-text">8-BALL version v1.0.00.00000.=)</div> 
+            </a>
+            <div class="topnav-right">
+                <b> <a style="color: white; font-size: 25px; text-decoration:none; margin-right: 30px;" href="https://github.com/TrayTrayV/8ball-Project">Github Repository</a> </b>
+                <b> <a style="color: white; font-size: 25px; text-decoration:none;" href="#faq">FAQ</a> </b>
+            </div>
         </div>
     </div>
-   
+</div>
+
+    .topnav-right {
+    float: right;
+}
+<br>
+<br>
+<div class="main">
     <div id="links">
             
         <img id="banner" alt="pony" src='https://64.media.tumblr.com/31700e5d69937e0e4d2eb8e61a2f6048/d56038eab59cd3d6-bc/s250x400/26e4395cfb84e64e8438cb2b310ed0cffcab7e19.gifv' width="106" height="96" />
@@ -25,8 +39,10 @@
         <a href="https://en.wikipedia.org/wiki/Eight-ball">
             <img id="banner1" alt="eightball" src='https://64.media.tumblr.com/19888a967ce815e9ae15eaac99af118c/9f8b2b61d72426f1-4d/s500x750/d942b41fa672476ad96f2ac7a6ac0cef7ced221b.gifv' width="468" height="60" />
         </a>
-        <img id="banner2" alt="pony" src='https://64.media.tumblr.com/31700e5d69937e0e4d2eb8e61a2f6048/d56038eab59cd3d6-bc/s250x400/26e4395cfb84e64e8438cb2b310ed0cffcab7e19.gifv' width="106" height="96" />
-        
+        <a href="https://www.youtube.com/watch?v=FbmlhaVoSUc&t&?autoplay=1">
+            <!-- right pony -->
+        <img id="banner2" alt="pony" src='https://64.media.tumblr.com/af5f819d203e8ea981fb1ffa9eca7de2/1707d225dcc6613a-b7/s250x400/64f866517cb81987c43e69a7a61ee244fe70c4f9.gifv' width="106" height="96" />
+    </a>
     </div>
     
 </div>
@@ -38,7 +54,7 @@
     <div id="buttonSomething">
         <form id ="buttonStyle" @submit.prevent="askQuestion">
             <input type="text" id="textBox" placeholder="Ask the 8-Ball!" v-model="question"> 
-            <button type="submit" id="buttonBox">Ask</button>
+            <center><button type="submit" id="buttonBox">Ask</button></center>
         </form>
     </div>
 
@@ -56,8 +72,37 @@
         </div>
       </div>
       
-</div>
+      <div id="faq"></div>
 
+
+<br>
+<br>
+      <!-- Window For FAQ -->
+      <div class="window">
+        <div class="title-bar">
+          <img id="banner2" alt="ball-active" src='https://i.imgur.com/gzRdyz0.png' width="50" height="50" />
+          <div class="title-bar-text">FAQ</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize"></button>
+          </div>
+        </div>
+      
+        <div class="window-body">
+            <h2 style="text-align:left;"> FAQ </h2>
+            <b><p style="text-align:left; font-size: 30px;">What is magic 8-Ball?</p></b>
+            <p style="text-align:left; font-size: 25px;">The <a href="https://en.wikipedia.org/wiki/Magic_8_Ball">Magic 8 Ball </a> is a plastic sphere, made to look like an oversized <a href="https://en.wikipedia.org/wiki/Glossary_of_cue_sports_terms#eight_ball">eight ball</a>, that is used for <a href="https://en.wikipedia.org/wiki/Fortune-telling">fortune-telling</a> or seeking advice. It was invented in 1946 by Albert C. Carter and Abe Bookman and is currently manufactured by<a href="https://en.wikipedia.org/wiki/Mattel"> Mattel</a>. The user asks a <a href = "https://en.wikipedia.org/wiki/Yes%E2%80%93no_question">yes–no question</a> to the ball, then turns it over to reveal an answer that floats up into a window. </p>
+            <b><p style="text-align:left; font-size: 30px;">Design and usage</p></b>
+            <p style="text-align:left; font-size: 25px;">The Magic 8 Ball is a hollow plastic sphere resembling a black-and-white 8 ball. Its standard size is larger than an ordinary pool ball, but it has been made in different sizes. Inside the ball, a cylindrical reservoir contains a white plastic 20-sided <a href = "https://en.wikipedia.org/wiki/Regular_icosahedron">regular icosahedron</a> <a href = "https://en.wikipedia.org/wiki/Dice">die</a> floating in approximately 100 ml (3+1⁄2 US fl oz) of alcohol dyed dark blue. Each of the die's 20 faces has an affirmative, negative, or non-committal statement printed in raised letters. These messages are read through a window on the ball's bottom. </p>
+            <p style="text-align:left; font-size: 25px;">To use the ball, it must be held with the window initially facing down to allow the die to float within the cylinder. After asking the ball a yes–no question, the user then turns the ball so that the window faces up. The die floats to the top, and one face presses against the window; the raised letters displace the blue liquid to reveal the message as white letters on a blue background. Although most users shake the ball before turning it upright, the instructions warn against doing so to avoid white bubbles. </p>
+            <p style="text-align:left; font-size: 25px;">While the Magic 8 Ball has undergone very few changes, an addition in 1975 by new owners, <a href = "https://en.wikipedia.org/wiki/Ideal_Toy_Company">Ideal Toy Company</a>, fixed the bubble problem. Their patented "Bubble Free Die Agitator", an inverted funnel, rerouted the air trapped inside. The solution has been utilized ever since. </p>
+            <b><p style="text-align:left; font-size: 30px;">Why Magic 8-Ball </p></b>        
+            <p style="text-align:left; font-size: 25px;">We chose our project to be based on the Magic 8-Ball toy since we believe it to be easy to implement and to showcase a website with functioning input/output alongside the Django framework.</p>
+        </div>
+      </div>  
+
+      <br>
+      <br>
 <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
 <!-- Scripts -->
 <script>
