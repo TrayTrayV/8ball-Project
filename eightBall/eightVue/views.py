@@ -6,5 +6,5 @@ def index(request):
     return render(request, 'eightVue/main.html')
 
 def get_eight_ball_responses(request):
-    responses = eightBallResponse.objects.values_list('text', flat=True)
+    responses = eightBallResponse.objects.values_list('text', 'classifier')
     return JsonResponse(list(responses), safe=False)

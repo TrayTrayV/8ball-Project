@@ -52,7 +52,7 @@
           </div>
         </div>
         <div class="window-body">
-          <h1> > [[ message ]] </h1>
+          <h1 :class="classElement"> > [[ message ]] </h1>
         </div>
       </div>
       
@@ -68,7 +68,9 @@
             return {
                 question: '',
                 answers: [],
-                message: ''
+                message: '',
+                answerList: [],
+                classElement: ''
             };
         },
         methods: {
@@ -86,7 +88,26 @@
             askQuestion() {
                 const randomIndex = Math.floor(Math.random() * this.answers.length);
                 //this one now works by adding the delimiters
-                this.message = this.answers[randomIndex];
+                this.answerList = this.answers[randomIndex];
+
+                let responseMessage = this.answerList[0];
+                let classifier = this.answerList[1];
+                
+                let classElement = '';
+                if (classifier === 'positive') {
+                    this.message = responseMessage;
+                    classElement = 'positiveResponse';
+                } else if (classifier === 'negative') {
+                    this.message = responseMessage;
+                    classElement = 'negativeResponse';
+                } else {
+                    //Neutral
+                    this.message = responseMessage;
+                    classElement = 'neutralResponse';
+                }
+
+
+                this.classElement = classElement;
             },
         },
         mounted() {
@@ -98,7 +119,90 @@
 </script>
 
 <!-- Style -->
+
 <style>
+
+    .positiveResponse {
+        color: #00E691;
+        animation: colorChangePositive 1s infinite alternate
+    }
+    
+    .negativeResponse {
+        color: red;
+        animation: colorChangeNegative 1s infinite alternate
+
+    }
+    
+    .neutralResponse {
+        color: black;
+        animation: colorChangeNeutral 1s infinite alternate
+
+    }
+    
+    
+    @keyframes colorChangePositive {
+        0% {
+            color: #00E691
+        }
+        20% {
+            color: #00DD8C
+        }
+        40% {
+            color: #00BB76
+        }
+        60% {
+            color: #009961
+        }
+        80% {
+            color: #007A4E
+        }
+        100% {
+            color: #005737
+        }
+    }
+
+    @keyframes colorChangeNegative {
+        0% {
+            color: #EC026C
+        }
+        20% {
+            color: #CA025C
+        }
+        40% {
+            color: #8F0140
+        }
+        60% {
+            color: #86013D
+        }
+        80% {
+            color: #64012E
+        }
+        100% {
+            color: #42011E
+        }
+    }
+
+    @keyframes colorChangeNeutral {
+        0% {
+            color: #6E2FEC
+        }
+        20% {
+            color: #5E28CA
+        }
+        40% {
+            color: #421D8E
+        }
+        60% {
+            color: #3F1B86
+        }
+        80% {
+            color: #2F1464
+        }
+        100% {
+            color: #1F0D42
+        }
+    }
+
 
     .modal {
         display: none;
