@@ -145,13 +145,16 @@
                 if (classifier === 'positive') {
                     this.message = responseMessage;
                     classElement = 'positiveResponse';
+                    playsound(positivesound);
                 } else if (classifier === 'negative') {
                     this.message = responseMessage;
                     classElement = 'negativeResponse';
+                    playsound(negativesound);
                 } else {
                     //Neutral
                     this.message = responseMessage;
                     classElement = 'neutralResponse';
+                    playsound(neutralsound);
                 }
 
 
@@ -164,6 +167,22 @@
     });
 
     app.mount('#mainApp');
+
+       //sound things
+    const positivesound = new Audio("https://dl.dropbox.com/scl/fi/pncapngwscsrw1f2ldyjq/anime-wow-sound-effect.mp3?rlkey=swbi1yni22nzo8izpjwkumx4m&");
+    const negativesound = new Audio("https://dl.dropbox.com/scl/fi/2xyrg57e45uqmjpsblnsi/spongebob-fail.mp3?rlkey=zh9d61lrrnccxche57ls919bx&");
+    const neutralsound = new Audio("https://dl.dropbox.com/scl/fi/remu93p3n2ne2sfhnqgev/vine-boom.mp3?rlkey=9k1cfmcvakkgrz30ei98h94lh&");
+
+    function playsound(Audio){
+        if (Audio.currentTime > 0 ) {
+            Audio.currentTime = 0;
+        }else{
+            Audio.play();
+
+        }
+    }
+
+
 </script>
 
 <!-- Style -->
