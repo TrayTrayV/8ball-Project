@@ -7,11 +7,6 @@ So, How to Run this Application!
 
 (For Linux)
 ```
-//Must be in a shell environment
-$ source venv/bin/activate
-
-OR
-
 $ python -m venv .venv
 
 $ source .venv/bin/activate
